@@ -43,6 +43,7 @@ class AnalysisCountry:
 
         # Use pandas to create a dataframe
         df = pd.DataFrame(list(cursor))
+        print(df.values)
 
         if barplot:
             self.displayBarPlot(df)
