@@ -26,8 +26,8 @@ class AnalysisState:
         plt.xlabel("Number of jobs", fontsize=6)
         plt.ylabel("Companies", fontsize=6)
         plt.title("{} jobs in a 40 mile radius of {}".format(self.jobtype, self.location))
-        plt.yticks(fontsize=6)
-        plt.xticks(fontsize=6)
+        plt.yticks(fontsize=10)
+        plt.xticks(fontsize=10)
         plt.show()
 
 

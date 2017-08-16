@@ -172,4 +172,89 @@ class DiceCountryDAO:
 
         return(self._collection.aggregate(query))
 
+    def jobCountByState(self):
 
+        print("Printing top companies")
+
+        query = [
+        {
+            "$match": {
+                "location": {"$exists": "true", "$ne": ""}
+                }
+        },
+        {
+            "$project": {
+                "jobTitle": 1,
+                "company": 1,
+                "location": 1,
+                "state": {
+                    "$toUpper": {"$substrCP": ["$location", {"$subtract": [{"$strLenCP": "$location"}, 2]}, 2]}
+                    }
+                }
+        },
+        {
+            "$match": {
+                "state": {
+                    "$in": ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA",
+                            "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
+                            "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
+                            "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
+                            "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+                }
+            }
+        },
+        {
+            "$group": {
+                "_id": "$state",
+                "count": {"$sum":1}
+            }
+
+        },
+        {
+            "$project": {
+                "_id":0,
+                "state": "$_id",
+                "jobcount": "$count"
+            }
+
+        },
+        {
+            "$sort": {
+                "jobcount":-1
+            }
+
+        }
+        ]
+
+        return self._collection.aggregate(query)
+
+    def uniqueEmployers(self):
+
+        print("Total number of unique employers in US")
+
+        query = [
+        {
+            "$group": {
+                "_id": "$company",
+            }
+
+        },
+        {
+            "$group": {
+                "_id":1,
+                "count": {"$sum":1}
+            }
+
+        }
+        ]
+
+        cursor = self._collection.aggregate(query)
+
+        #total = 0
+
+        #for item in cursor:
+            #total = total + 1
+
+        #return (total)
+
+        return (cursor)

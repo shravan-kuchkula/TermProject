@@ -99,22 +99,29 @@ class DiceStateDAO:
 
         print("Printing top companies")
 
-        query = [{"$group": {
-            "_id": "$company",
-            "totalJobs": {"$sum": 1}
+        query = [
+        {
+            "$group": {
+                "_id": "$company",
+                "totalJobs": {"$sum": 1}
             }
         },
-            {"$sort":{
+        {
+            "$sort":{
                 "totalJobs":-1
             }
         },
-            {"$project": {
+        {
+            "$project": {
                 "_id":0,
                 "Company":"$_id",
                 "JobCount":"$totalJobs"
             }
         },
-            {"$limit":20}
+        {
+            "$limit":20
+        }
+
         ]
 
         return self._collection.aggregate(query)

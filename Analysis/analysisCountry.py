@@ -43,7 +43,6 @@ class AnalysisCountry:
 
         # Use pandas to create a dataframe
         df = pd.DataFrame(list(cursor))
-        print(df.values)
 
         if barplot:
             self.displayBarPlot(df)
@@ -62,5 +61,28 @@ class AnalysisCountry:
         df = pd.DataFrame(list(cursor))
 
         print(df.to_string(index=False))
+
+        return df
+
+    def getJobCountAllStates(self):
+
+        print("Getting job count for all 50 states")
+
+        cursor = self.diceJobs.jobCountByState()
+
+        # Use pandas to create a dataframe
+        df = pd.DataFrame(list(cursor))
+
+        print(df.to_string(index=False))
+
+        return df
+
+    def getNumberOfUniqueEmployers(self):
+
+        print("Getting number of unique employers in US")
+
+        cursor = self.diceJobs.uniqueEmployers()
+
+        df = pd.DataFrame(list(cursor))
 
         return df
