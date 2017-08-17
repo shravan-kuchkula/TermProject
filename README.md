@@ -11,26 +11,17 @@ TermProject
 |_  
   Analysis  
   |_  
-    Data  
-    |_  
-      Makefile.txt
-      gather_data_dice.py
-      gather_data_glassdoor.py
-  |_
     analysis.py
+    analysisCountry.py
+    analysisSkills.py
+    analysisState.py
+    diceCountryDAO.py
+    diceSkillDAO.py
+    diceStateDAO.py
 |_
-  Paper
+  Report
     |_
-      Report.html
-      Report.pdf
-      Report.Rmd
-      Report.md
+      Term-Paper-Presentation.pptx
+      analysisCountry.ipynb
+      analysisStates.ipynb
 ```
-
-  * `Makefile.txt`            - Instructions for recreating the analysis.
-  * `gather_data_dice.py`     - Downloads jobs from dice api and stores in mongodb.
-  * `gather_data_glassdoor.py`- Downloads jobs from glassdoor api into mongodb.
-  * `analysis.py`             - Contains functions used in the analysis.
-  * `Report.pdf`              - A report of the analysis.
-  * `Report.md`               - Markdown file that renders on Github as a webpage.
-
