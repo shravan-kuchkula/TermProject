@@ -23,10 +23,10 @@ TermProject
     |_
       Paper
           |_
-            MSDS7330_402_ProjectTermPaper_Nelson_Garza_Kuchkula.docx (Paper)
-      Term-Paper-Presentation-Shravan-Jack-Antonio.pptx (Presentation Slides)
-      instructions.ipynb (Jupyter notebook to recreate the analysis)
-      analysis.md (Markdown file to recreate the analysis)
+            MSDS7330_402_ProjectTermPaper_Nelson_Garza_Kuchkula.docx --->  (Paper)
+      Term-Paper-Presentation-Shravan-Jack-Antonio.pptx 	     --->  (Presentation Slides)
+      instructions.ipynb 				             --->  (Jupyter notebook to recreate the analysis)
+      analysis.md 						     --->  (Markdown file to recreate the analysis)
       output_19_3.png
       output_15_1.png
 ```
