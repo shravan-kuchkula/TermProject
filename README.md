@@ -21,7 +21,7 @@ TermProject
 |_
   Report
     |_
-      Term-Paper-Presentation.pptx
-      analysisCountry.ipynb
-      analysisStates.ipynb
+      Term-Paper-Presentation-Shravan-Jack-Antonio.pptx
+      MSDS7330_402_ProjectTermPaper_Nelson_Garza_Kuchkula.docx
+      instructions.ipynb
 ```

@@ -60,7 +60,7 @@ class AnalysisCountry:
         # Use pandas to create a dataframe
         df = pd.DataFrame(list(cursor))
 
-        print(df.to_string(index=False))
+        #print(df.to_string(index=False))
 
         return df
 
@@ -84,5 +84,15 @@ class AnalysisCountry:
         cursor = self.diceJobs.uniqueEmployers()
 
         df = pd.DataFrame(list(cursor))
+
+        return df
+
+    def getDistinctEmployers(self):
+
+        print("Getting distinct employers")
+
+        cursor = self.diceJobs.distinctEmployers()
+
+        df =  pd.DataFrame(cursor)
 
         return df
