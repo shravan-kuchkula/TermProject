@@ -1,5 +1,5 @@
 # TermProject
-## Data Science job postings using MongDB
+## Data Science job postings using MongoDB
 Retrieve jobs from dice api's and store them in MongoDB. Perform analysis of the jobs using MongoDB query language.
 
 A quick glance of the project structure and a brief description of the files is given below:
